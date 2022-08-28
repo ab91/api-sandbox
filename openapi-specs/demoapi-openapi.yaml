@@ -22,15 +22,8 @@ paths:
         - product
       summary: Get products
       operationId: getProducts
-      # security:
-      #   - ApiKeyAuth: []
-      # parameters:
-      #   - in: header
-      #     name: Access-Control-Allow-Origin
-      #     schema:
-      #       type: string
-      #       default: "*"
-      #     required: true 
+      security:
+        - ApiKeyAuth: []
       responses:
         "200":
           description: successful operation
@@ -43,11 +36,11 @@ paths:
         "400":
           description: Invalid key/value supplied
 components:
-#   securitySchemes:
-#     ApiKeyAuth:
-#       type: apiKey
-#       in: header
-#       name: key
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: key
   schemas:  
     Products:
       type: object
@@ -59,7 +52,7 @@ components:
           type: string
           example: Baseball Cap         
         price:
-          type: integer
+          type: number
           format: float 
         category:
           type: string
