@@ -57,10 +57,10 @@ components:
           format: int64
         name:
           type: string
-          example: Football Cap         
-        # price:
-        #   type: float
-        #   format: int64
+          example: Baseball Cap         
+        price:
+          type: integer
+          format: float 
         category:
           type: string
           example: 1
