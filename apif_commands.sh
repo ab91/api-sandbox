@@ -6,7 +6,16 @@ docker run --platform linux/amd64 -v "$(pwd)/:/dir" -p 8000:5000 quay.io/saucela
 
 docker run --platform linux/amd64 -v "$(pwd)/:/dir" -p 8000:5000 quay.io/saucelabs/piestry -u /dir/openapi-specs/demoapi-openapi-x.yaml
 
-localhost:8000/api/retail/product
+docker run --platform linux/amd64 -v "$(pwd)/:/dir" -p 8000:5000 quay.io/saucelabs/piestry -u /dir/openapi-specs/demoapi-openapi.yaml --validate-requests
+
+curl localhost:8000/api/retail/product
+
+# APIF Contract Testing
+
+### API Producer side: ASSERT-VALID-JSONSCHEMA
+### API Consumer side:
+
+
 
 # APIF Load Testing
 
